@@ -11,7 +11,7 @@ target 'jitsi-meet' do
   pod 'Firebase/DynamicLinks', '~> 5.18.0'
 end
 
-target 'JitsiMeet' do
+target 'JitsiJoinMeetUs' do
   project 'sdk/sdk.xcodeproj'
 
   # React Native and its dependencies

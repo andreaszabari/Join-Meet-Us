@@ -208,7 +208,7 @@ function parseSizeParam(value) {
  */
 export default class JitsiMeetExternalAPI extends EventEmitter {
     /**
-     * Constructs new API instance. Creates iframe and loads Jitsi Meet in it.
+     * Constructs new API instance. Creates iframe and loads Meet in it.
      *
      * @param {string} domain - The domain name of the server that hosts the
      * conference.
@@ -354,7 +354,7 @@ export default class JitsiMeetExternalAPI extends EventEmitter {
 
 
     /**
-     * Getter for the large video element in Jitsi Meet.
+     * Getter for the large video element in Meet.
      *
      * @returns {HTMLElement|undefined} - The large video.
      */
@@ -372,7 +372,7 @@ export default class JitsiMeetExternalAPI extends EventEmitter {
     }
 
     /**
-     * Getter for participant specific video element in Jitsi Meet.
+     * Getter for participant specific video element in Meet.
      *
      * @param {string|undefined} participantId - Id of participant to return the video for.
      *
@@ -576,7 +576,7 @@ export default class JitsiMeetExternalAPI extends EventEmitter {
      * id: participantId //participantId of the new dominant speaker
      * }}
      * {@code suspendDetected} - receives event notifications about detecting suspend event in host computer.
-     * {@code readyToClose} - all hangup operations are completed and Jitsi Meet
+     * {@code readyToClose} - all hangup operations are completed and Meet
      * is ready to be disposed.
      * @returns {void}
      *
@@ -590,7 +590,7 @@ export default class JitsiMeetExternalAPI extends EventEmitter {
     }
 
     /**
-     * Removes the listeners and removes the Jitsi Meet frame.
+     * Removes the listeners and removes the Meet frame.
      *
      * @returns {void}
      */
@@ -794,7 +794,7 @@ export default class JitsiMeetExternalAPI extends EventEmitter {
     }
 
     /**
-     * Returns the iframe that loads Jitsi Meet.
+     * Returns the iframe that loads Meet.
      *
      * @returns {HTMLElement} The iframe.
      */
@@ -919,7 +919,7 @@ export default class JitsiMeetExternalAPI extends EventEmitter {
 
     /**
      * Returns the configuration for electron for the windows that are open
-     * from Jitsi Meet.
+     * from Meet.
      *
      * @returns {Promise<Object>}
      *

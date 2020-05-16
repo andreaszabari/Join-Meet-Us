@@ -1,18 +1,18 @@
-# Jitsi Meet quick install
+# Meet quick install
 
 This guide helps you  ___host your own Jitsi server___. If you want to have a video conference without setting up any infrastructure, use https://meet.jit.si instead.
 
-This document describes the required steps for a quick Jitsi Meet installation on a Debian based GNU/Linux system. Debian 9 (Stretch) or later, and Ubuntu 18.04 (Bionic Beaver) or later are supported out-of-the-box.
+This document describes the required steps for a quick Meet installation on a Debian based GNU/Linux system. Debian 9 (Stretch) or later, and Ubuntu 18.04 (Bionic Beaver) or later are supported out-of-the-box.
 
 On Ubuntu systems, Jitsi requires dependencies from Ubuntu's `universe` package repository.  To ensure this is enabled, run `apt-add-repository universe` at the command-line.
 
 _Note_: Many of the installation steps require elevated privileges. If you are logged in using a regular user account, you may need to temporarily increase your permissions (for example, by using `sudo` for individual commands).
 
-## Basic Jitsi Meet install
+## Basic Meet install
 
 ### Set up the Fully Qualified Domain Name (FQDN) (optional)
 
-If the machine used to host the Jitsi Meet instance has a FQDN (for example `meet.example.org`) already set up in DNS, `/etc/hostname` must contain this FQDN; if this is not the case yet, [change the hostname](https://wiki.debian.org/HowTo/ChangeHostname).
+If the machine used to host the Meet instance has a FQDN (for example `meet.example.org`) already set up in DNS, `/etc/hostname` must contain this FQDN; if this is not the case yet, [change the hostname](https://wiki.debian.org/HowTo/ChangeHostname).
 
 Then add the same FQDN in the `/etc/hosts` file, associating it with the loopback address:
 
@@ -26,9 +26,9 @@ echo 'deb https://download.jitsi.org stable/' >> /etc/apt/sources.list.d/jitsi-s
 wget -qO -  https://download.jitsi.org/jitsi-key.gpg.key | apt-key add -
 ```
 
-### Install Jitsi Meet
+### Install Meet
 
-_Note_: The installer will check if [Nginx](https://nginx.org/) or [Apache](https://httpd.apache.org/) is present (in that order) and configure a virtualhost within the web server it finds to serve Jitsi Meet. If none of the above is found it then defaults to Nginx.
+_Note_: The installer will check if [Nginx](https://nginx.org/) or [Apache](https://httpd.apache.org/) is present (in that order) and configure a virtualhost within the web server it finds to serve Meet. If none of the above is found it then defaults to Nginx.
 If you are already running Nginx on port 443 on the same machine you better skip the turnserver configuration as it will conflict with your current port 443, so use the command `apt install --no-install-recommends jitsi-meet`.
 
 ```sh
@@ -42,15 +42,15 @@ apt-get update
 apt-get -y install jitsi-meet
 ```
 
-During the installation, you will be asked to enter the hostname of the Jitsi Meet instance. If you have a [FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) for the instance already set up in DNS, enter it there. If you don't have a resolvable hostname, you can enter the IP address of the machine (if it is static or doesn't change).
+During the installation, you will be asked to enter the hostname of the Meet instance. If you have a [FQDN](https://en.wikipedia.org/wiki/Fully_qualified_domain_name) for the instance already set up in DNS, enter it there. If you don't have a resolvable hostname, you can enter the IP address of the machine (if it is static or doesn't change).
 
-This hostname (or IP address) will be used for virtualhost configuration inside the Jitsi Meet and also, you and your correspondents will be using it to access the web conferences.
+This hostname (or IP address) will be used for virtualhost configuration inside the Meet and also, you and your correspondents will be using it to access the web conferences.
 
 ### Generate a Let's Encrypt certificate (optional, recommended)
 
 In order to have encrypted communications, you need a [TLS certificate](https://en.wikipedia.org/wiki/Transport_Layer_Security). The easiest way is to use [Let's Encrypt](https://letsencrypt.org/).
 
-_Note_: Jitsi Meet mobile apps *require* a valid certificate signed by a trusted [Certificate Authority](https://en.wikipedia.org/wiki/Certificate_authority) and will not be able to connect to your server if you choose a self-signed certificate.
+_Note_: Meet mobile apps *require* a valid certificate signed by a trusted [Certificate Authority](https://en.wikipedia.org/wiki/Certificate_authority) and will not be able to connect to your server if you choose a self-signed certificate.
 
 Simply run the following in your shell:
 
@@ -92,11 +92,11 @@ You should see a web page prompting you to create a new meeting.  Make sure that
 
 If this all worked, then congratulations!  You have an operational Jitsi conference service.
 
-## Adding sip-gateway to Jitsi Meet
+## Adding sip-gateway to Meet
 
 ### Install Jigasi
 
-Jigasi is a server-side application acting as a gateway to Jitsi Meet conferences. It allows regular [SIP](https://en.wikipedia.org/wiki/Session_Initiation_Protocol) clients to join meetings and provides transcription capabilities.
+Jigasi is a server-side application acting as a gateway to Meet conferences. It allows regular [SIP](https://en.wikipedia.org/wiki/Session_Initiation_Protocol) clients to join meetings and provides transcription capabilities.
 
 ```sh
 apt-get -y install jigasi
@@ -110,9 +110,9 @@ dpkg -i jigasi_1.0-107_amd64.deb
 
 During the installation, you will be asked to enter your SIP account and password. This account will be used to invite the other SIP participants.
 
-### Reload Jitsi Meet
+### Reload Meet
 
-Launch again a browser with the Jitsi Meet URL and you'll see a telephone icon on the right end of the toolbar. Use it to invite SIP accounts to join the current conference.
+Launch again a browser with the Meet URL and you'll see a telephone icon on the right end of the toolbar. Use it to invite SIP accounts to join the current conference.
 
 Enjoy!
 
@@ -142,7 +142,7 @@ Max open files            65000                65000                files
 
 ## Debugging problems
 
-If you run into problems, one thing to try is using a different web browser. Some versions of some browsers are known to have issues with Jitsi Meet. You can also visit https://test.webrtc.org to test your browser's [WebRTC](https://en.wikipedia.org/wiki/WebRTC) support.
+If you run into problems, one thing to try is using a different web browser. Some versions of some browsers are known to have issues with Meet. You can also visit https://test.webrtc.org to test your browser's [WebRTC](https://en.wikipedia.org/wiki/WebRTC) support.
 
 Another place to look is the various log files:
 

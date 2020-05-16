@@ -1,4 +1,4 @@
-# Developing Jitsi Meet
+# Developing Meet
 
 ## Building the sources
 
@@ -11,7 +11,7 @@ cd jitsi-meet
 npm install
 ```
 
-To build the Jitsi Meet application, just type
+To build the Meet application, just type
 ```
 make
 ```

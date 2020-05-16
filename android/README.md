@@ -1,8 +1,8 @@
-# Jitsi Meet SDK for Android
+# Meet SDK for Android
 
 ## Sample applications using the SDK
 
-If you want to see how easy integrating the Jitsi Meet SDK into a native application is, take a look at the
+If you want to see how easy integrating the Meet SDK into a native application is, take a look at the
 [sample applications repository](https://github.com/jitsi/jitsi-meet-sdk-samples).
 
 ## Build your own, or use a pre-build SDK artifacts/binaries
@@ -51,13 +51,13 @@ A note on dependencies: Apart from the SDK, Jitsi also publishes a binary Maven 
 
 If you want to use a SDK that is built from source, you will likely benefit from composing a local Maven repository that contains these dependencies. The text below describes how you create a repository that includes both the SDK as well as these dependencies. For illustration purposes, we'll define the location of this local Maven repository as `/tmp/repo`
 
-In source code form, the Android SDK dependencies are locked/pinned by package.json and package-lock.json of the Jitsi Meet project. To obtain the data, execute NPM in the jitsi-meet project directory:
+In source code form, the Android SDK dependencies are locked/pinned by package.json and package-lock.json of the Meet project. To obtain the data, execute NPM in the jitsi-meet project directory:
 
     npm install
 
 This will pull in the dependencies in either binary format, or in source code format, somewhere under /node_modules/
 
-Third-party React Native _modules_, which Jitsi Meet SDK for Android depends on, are download by NPM in source code 
+Third-party React Native _modules_, which Meet SDK for Android depends on, are download by NPM in source code 
 or binary form. These need to be assembled into Maven artifacts, and then published to your local Maven repository.
 A script is provided to facilitate this. From the root of the jitsi-meet project repository, run:
 
@@ -89,7 +89,7 @@ dependencies of `jitsi-meet-sdk`.
 
 ## Using the API
 
-Jitsi Meet SDK is an Android library which embodies the whole Jitsi Meet
+Meet SDK is an Android library which embodies the whole Meet
 experience and makes it reusable by third-party apps.
 
 First, add Java 1.8 compatibility support to your project by adding the
@@ -217,8 +217,8 @@ conference ends or fails.
 
 ### JitsiMeetView
 
-The `JitsiMeetView` class is the core of Jitsi Meet SDK. It's designed to
-display a Jitsi Meet conference (or a welcome page).
+The `JitsiMeetView` class is the core of Meet SDK. It's designed to
+display a Meet conference (or a welcome page).
 
 #### join(options)
 
@@ -318,7 +318,7 @@ This is a static method.
 #### JitsiMeetViewListener
 
 `JitsiMeetViewListener` provides an interface apps can implement to listen to
-the state of the Jitsi Meet conference displayed in a `JitsiMeetView`.
+the state of the Meet conference displayed in a `JitsiMeetView`.
 
 #### onConferenceJoined
 

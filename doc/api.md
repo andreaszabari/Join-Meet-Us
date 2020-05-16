@@ -1,10 +1,10 @@
-# Jitsi Meet API
+# Meet API
 
-You can use the Jitsi Meet API to embed Jitsi Meet in to your application. You are also welcome to use it for embedding the globally distributed and highly available deployment on meet.jit.si itself. The only thing we ask for in that case is that you please DO NOT remove the jitsi.org logo from the top left corner.
+You can use the Meet API to embed Meet in to your application. You are also welcome to use it for embedding the globally distributed and highly available deployment on meet.jit.si itself. The only thing we ask for in that case is that you please DO NOT remove the jitsi.org logo from the top left corner.
 
 ## Installation
 
-To embed Jitsi Meet in your application you need to add the Jitsi Meet API library:
+To embed Meet in your application you need to add the Meet API library:
 
 ```javascript
 <script src='https://meet.jit.si/external_api.js'></script>
@@ -13,7 +13,7 @@ To embed Jitsi Meet in your application you need to add the Jitsi Meet API libra
 
 ### `api = new JitsiMeetExternalAPI(domain, options)`
 
-The next step for embedding Jitsi Meet is to create the Jitsi Meet API object.
+The next step for embedding Meet is to create the Meet API object.
 Its constructor gets a number of options:
 
 * **domain**: domain used to build the conference URL, 'meet.jit.si' for
@@ -73,7 +73,7 @@ const options = {
 const api = new JitsiMeetExternalAPI(domain, options);
 ```
 
-You can also pass a jwt token to Jitsi Meet:
+You can also pass a jwt token to Meet:
 
  ```javascript
 const options = {
@@ -98,7 +98,7 @@ var options = {
 var api = new JitsiMeetExternalAPI(domain, options);
 ```
 
-### Controlling the embedded Jitsi Meet Conference
+### Controlling the embedded Meet Conference
 
 Device management `JitsiMeetExternalAPI` methods:
 * **getAvailableDevices** - Retrieve a list of available devices.
@@ -193,7 +193,7 @@ api.setAudioOutputDevice(deviceLabel, deviceId);
 api.setVideoInputDevice(deviceLabel, deviceId);
 ```
 
-You can control the embedded Jitsi Meet conference using the `JitsiMeetExternalAPI` object by using `executeCommand`:
+You can control the embedded Meet conference using the `JitsiMeetExternalAPI` object by using `executeCommand`:
 
 ```javascript
 api.executeCommand(command, ...arguments);
@@ -287,7 +287,7 @@ api.executeCommands({
 });
 ```
 
-You can add event listeners to the embedded Jitsi Meet using the `addEventListener` method.
+You can add event listeners to the embedded Meet using the `addEventListener` method.
 **NOTE: This method still exists but it is deprecated. JitsiMeetExternalAPI class extends [EventEmitter]. Use [EventEmitter] methods (`addListener` or `on`).**
 ```javascript
 api.addEventListener(event, listener);
@@ -497,7 +497,7 @@ changes. The listener will receive an object with the following structure:
 }
 ```
 
-* **readyToClose** - event notification fired when Jitsi Meet is ready to be closed (hangup operations are completed).
+* **readyToClose** - event notification fired when Meet is ready to be closed (hangup operations are completed).
 
 * **subjectChange** - event notifications about subject of conference changes.
 The listener will receive an object with the following structure:
@@ -563,7 +563,7 @@ You can get the email of a participant in the conference with the following API 
 const email = api.getEmail(participantId);
 ```
 
-You can get the iframe HTML element where Jitsi Meet is loaded with the following API function:
+You can get the iframe HTML element where Meet is loaded with the following API function:
 ```javascript
 const iframe = api.getIFrame();
 ```
@@ -606,7 +606,7 @@ api.invite([ {...}, {...}, {...} ]).then(() => {
 ```
 **NOTE: The format of the invitees in the array depends on the invite service used for the deployment.**
 
-You can remove the embedded Jitsi Meet Conference with the following API function:
+You can remove the embedded Meet Conference with the following API function:
 ```javascript
 api.dispose();
 ```

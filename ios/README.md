@@ -1,11 +1,11 @@
-# Jitsi Meet SDK for iOS
+# Meet SDK for iOS
 
-The Jitsi Meet iOS SDK provides the same user experience as the Jitsi Meet app,
+The Meet iOS SDK provides the same user experience as the Meet app,
 in a customizable way which you can embed in your apps.
 
 ## Sample applications using the SDK
 
-If you want to see how easy integrating the Jitsi Meet SDK into a native application is, take a look at the
+If you want to see how easy integrating the Meet SDK into a native application is, take a look at the
 [sample applications repository](https://github.com/jitsi/jitsi-meet-sdk-samples).
 
 ## Usage
@@ -25,14 +25,14 @@ Follow the instructions [here](https://github.com/jitsi/jitsi-meet-ios-sdk-relea
 
 2. `xcodebuild -workspace ios/jitsi-meet.xcworkspace -scheme JitsiMeet -destination='generic/platform=iOS' -configuration Release archive`
 
-After successfully building Jitsi Meet SDK for iOS, copy
+After successfully building Meet SDK for iOS, copy
 `ios/sdk/JitsiMeet.framework` (if the path points to a symbolic link, follow the
 symbolic link) and
 `node_modules/react-native-webrtc/ios/WebRTC.framework` into your project.
 
 ## API
 
-JitsiMeet is an iOS framework which embodies the whole Jitsi Meet experience and
+JitsiMeet is an iOS framework which embodies the whole Meet experience and
 makes it reusable by third-party apps.
 
 To get started:
@@ -170,7 +170,7 @@ The `data` dictionary is empty.
 Picture-in-Picture style scenario, in a rectangle too small to accommodate its
 "full" UI.
 
-Jitsi Meet SDK does not currently implement native Picture-in-Picture on iOS. If
+Meet SDK does not currently implement native Picture-in-Picture on iOS. If
 desired, apps need to implement non-native Picture-in-Picture themselves and
 resize `JitsiMeetView`.
 
@@ -202,5 +202,5 @@ Dropbox app key:
 </array>
 ```
 
-2. Make sure your app calls the Jitsi Meet SDK universal / deep linking delegate
+2. Make sure your app calls the Meet SDK universal / deep linking delegate
    methods.

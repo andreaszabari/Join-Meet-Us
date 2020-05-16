@@ -1,6 +1,6 @@
-# Jitsi Meet apps for Android and iOS
+# Meet apps for Android and iOS
 
-Jitsi Meet can be built as a standalone app for Android or iOS. It uses the
+Meet can be built as a standalone app for Android or iOS. It uses the
 [React Native] framework.
 
 **If you want to rebuild the SDK yourself look in [Android README] or [iOS README].**

@@ -5,7 +5,7 @@ about: Suggest an idea for this project
 ---
 
 <!--
-Thank you for suggesting an idea to make Jitsi Meet better.
+Thank you for suggesting an idea to make Meet better.
 
 Please fill in as much of the template below as you're able.
 

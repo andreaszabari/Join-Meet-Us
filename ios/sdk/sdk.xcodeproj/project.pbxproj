@@ -327,7 +327,7 @@
 			dependencies = (
 			);
 			name = JitsiMeet;
-			productName = "Jitsi Meet SDK";
+			productName = "Meet SDK";
 			productReference = 0BD906E51EC0C00300C8C18E /* JitsiMeet.framework */;
 			productType = "com.apple.product-type.framework";
 		};

@@ -1,4 +1,4 @@
-# Server Installation for Jitsi Meet
+# Server Installation for Meet
 
 :warning: **WARNING:** Manual installation is not recommended. We recommend following the [quick-install](https://github.com/jitsi/jitsi-meet/blob/master/doc/quick-install.md) document. The current document describes the steps that are needed to install a working deployment, but steps are easy to mess up, and the debian packages are more up-to-date, where this document is sometimes not updated to reflect latest changes.
 
@@ -141,7 +141,7 @@ server {
         proxy_set_header Host $http_host;
     }
     # external_api.js must be accessible from the root of the
-    # installation for the electron version of Jitsi Meet to work
+    # installation for the electron version of Meet to work
     # https://github.com/jitsi/jitsi-meet-electron
     location /external_api.js {
         alias /srv/jitsi-meet/libs/external_api.min.js;
@@ -215,8 +215,8 @@ cd jicofo-1.1-SNAPSHOT-archive'
 ./jicofo.sh --host=localhost --domain=jitsi.example.com --secret=YOURSECRET2 --user_domain=auth.jitsi.example.com --user_name=focus --user_password=YOURSECRET3
 ```
 
-## Deploy Jitsi Meet
-Checkout and configure Jitsi Meet:
+## Deploy Meet
+Checkout and configure Meet:
 ```sh
 cd /srv
 git clone https://github.com/jitsi/jitsi-meet.git
@@ -249,7 +249,7 @@ nginx -t && nginx -s reload
 ## Running behind NAT
 Jitsi Videobridge can run behind a NAT, provided that both required ports are routed (forwarded) to the machine that it runs on. By default these ports are `TCP/4443` and `UDP/10000`.
 
-If you do not route these two ports, Jitsi Meet will only work with video for two people, breaking upon 3 or more people trying to show video.
+If you do not route these two ports, Meet will only work with video for two people, breaking upon 3 or more people trying to show video.
 
 `TCP/443` is required for the webserver which can be running on another machine than the Jitsi Videobrige is running on.
 
@@ -263,4 +263,4 @@ org.ice4j.ice.harvest.NAT_HARVESTER_PUBLIC_ADDRESS=<Public.IP.Address>
 You are now all set and ready to have your first meet by going to http://jitsi.example.com
 
 ## Enabling recording
-[Jibri](https://github.com/jitsi/jibri) is a set of tools for recording and/or streaming a Jitsi Meet conference.
+[Jibri](https://github.com/jitsi/jibri) is a set of tools for recording and/or streaming a Meet conference.

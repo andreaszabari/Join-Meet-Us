@@ -51,8 +51,8 @@ dependencies {
 
     // Hermes JS engine
     def hermesPath = "../../node_modules/hermes-engine/android/"
-    debugImplementation files(hermesPath + "hermes-debug.aar")
-    releaseImplementation files(hermesPath + "hermes-release.aar")
+    //implementation files(hermesPath + "hermes-debug.aar")
+    implementation files(hermesPath + "hermes-release.aar")
 
     implementation 'com.dropbox.core:dropbox-core-sdk:3.0.8'
     implementation 'com.jakewharton.timber:timber:4.7.1'
@@ -78,7 +78,7 @@ dependencies {
     implementation project(':react-native-webrtc')
     implementation project(':react-native-webview')
 
-    testImplementation 'junit:junit:4.12'
+    //testImplementation 'junit:junit:4.12'
 }
 
 
@@ -204,7 +204,7 @@ publishing {
             pom.withXml {
                 def pomXml = asNode()
                 pomXml.appendNode('name', 'jitsi-meet-sdk')
-                pomXml.appendNode('description', 'Jitsi Meet SDK for Android')
+                pomXml.appendNode('description', 'Meet SDK for Android')
                 def dependencies = pomXml.appendNode('dependencies')
                 configurations.getByName('releaseCompileClasspath').getResolvedConfiguration().getFirstLevelModuleDependencies().each {
                     // The (third-party) React Native modules that we depend on

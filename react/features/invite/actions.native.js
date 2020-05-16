@@ -23,7 +23,7 @@ export function doInvitePeople() {
             && (isAddPeopleEnabled(state) || isDialOutEnabled(state));
 
         if (addPeopleEnabled) {
-            return dispatch(setAddPeopleDialogVisible(true));
+            //return dispatch(setAddPeopleDialogVisible(true));
         }
 
         return dispatch(beginShareRoom());

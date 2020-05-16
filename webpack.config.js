@@ -4,7 +4,7 @@ const process = require('process');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 /**
- * The URL of the Jitsi Meet deployment to be proxy to in the context of
+ * The URL of the Meet deployment to be proxy to in the context of
  * development with webpack-dev-server.
  */
 const devServerProxyTarget
@@ -108,6 +108,14 @@ const config = {
             use: [
                 'style-loader',
                 'css-loader'
+            ]
+        },  {
+            // Allow CSS to be imported into JavaScript.
+
+            test: /\.scss$/,
+            use: [
+                'sass-loader',
+                
             ]
         }, {
             test: /\/node_modules\/@atlaskit\/modal-dialog\/.*\.js$/,

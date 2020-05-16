@@ -23,17 +23,17 @@ import styles, { SIDEBAR_AVATAR_SIZE } from './styles';
 /**
  * The URL at which the privacy policy is available to the user.
  */
-const PRIVACY_URL = 'https://jitsi.org/meet/privacy';
+const PRIVACY_URL = 'https://joinmeet.us/static/privacy.html';
 
 /**
  * The URL at which the user may send feedback.
  */
-const SEND_FEEDBACK_URL = 'mailto:support@jitsi.org';
+const SEND_FEEDBACK_URL = 'mailto:support@joinmeet.us';
 
 /**
  * The URL at which the terms (of service/use) are available to the user.
  */
-const TERMS_URL = 'https://jitsi.org/meet/terms';
+const TERMS_URL = 'https://joinmeet.us/static/terms.html';
 
 type Props = {
 
@@ -113,8 +113,16 @@ class WelcomePageSideBar extends Component<Props> {
                             url = { PRIVACY_URL } />
                         <SideBarItem
                             icon = { IconInfo }
+                            label = 'Security & Privacy'
+                            url = 'https://joinmeet.us/static/security-privacy.html' />
+                        <SideBarItem
+                            icon = { IconInfo }
                             label = 'welcomepage.sendFeedback'
                             url = { SEND_FEEDBACK_URL } />
+                            <SideBarItem
+                            icon = { IconInfo }
+                            label = 'Support'
+                            url = 'https://joinmeet.zendesk.com'/>
                     </ScrollView>
                 </SafeAreaView>
             </SlidingView>

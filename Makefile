@@ -20,7 +20,7 @@ compile:
 
 clean:
 	rm -fr $(BUILD_DIR)
-
+	
 deploy: deploy-init deploy-appbundle deploy-rnnoise-binary deploy-lib-jitsi-meet deploy-libflac deploy-css deploy-local
 
 deploy-init:

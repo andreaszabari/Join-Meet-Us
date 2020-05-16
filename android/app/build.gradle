@@ -20,7 +20,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId 'org.jitsi.meet'
+        applicationId 'us.joinmeet.app'
         versionCode vcode
         versionName project.appVersion
 
@@ -39,6 +39,14 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+                storeFile file(MYAPP_UPLOAD_STORE_FILE)
+                storePassword MYAPP_UPLOAD_STORE_PASSWORD
+                keyAlias MYAPP_UPLOAD_KEY_ALIAS
+                keyPassword MYAPP_UPLOAD_KEY_PASSWORD
+            }
+        }
     }
 
     buildTypes {
@@ -49,6 +57,7 @@ android {
         release {
             // Uncomment the following line for singing a test release build.
             //signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules-release.pro'
             buildConfigField "boolean", "GOOGLE_SERVICES_ENABLED", "${googleServicesEnabled}"
@@ -82,7 +91,7 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.appcompat:appcompat:1.1.0'
 
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0-beta-5'
+    implementation 'com.squareup.leakcanary:leakcanary-android:2.0-beta-5'
 
     if (!rootProject.ext.libreBuild) {
         implementation 'com.google.android.gms:play-services-auth:16.0.1'
@@ -90,7 +99,7 @@ dependencies {
         // Firebase
         //  - Crashlytics
         //  - Dynamic Links
-        implementation 'com.google.firebase:firebase-core:16.0.6'
+        implementation 'com.google.firebase:firebase-core:16.0.5'
         implementation 'com.crashlytics.sdk.android:crashlytics:2.9.8'
         implementation 'com.google.firebase:firebase-dynamic-links:16.1.5'
     }

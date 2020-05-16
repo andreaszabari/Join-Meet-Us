@@ -12,7 +12,7 @@ edit /etc/jitsi/jicofo/sip-communicator.properties (or similar), set the appropr
   org.jitsi.jicofo.jibri.SIP_BREWERY=TheSipBrewery@conference.yourdomain.com
  ```
 
-* Jitsi Meet configuration:
+* Meet configuration:
  - config.js: add 
 ```
   enableUserRolesBasedOnToken: true,

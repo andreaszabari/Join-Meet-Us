@@ -261,10 +261,6 @@ class WelcomePage extends AbstractWelcomePage {
                         </div>
                     </div>
                     <div className="footerCol">
-                        <p className="title">JOIN ON GitHub</p>
-                        <p className="content">
-                            Clone for developing, Join source codes with GitHub.
-                        </p>
                         <p className="shareLinks">
                             <a
                                 href="https://github.com/andreaszabari/Join-Meet-Us"

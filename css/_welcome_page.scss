@@ -112,7 +112,7 @@ body.welcome-page {
                 flex-grow: 1;
                 position: relative;
 
-                > * {
+                >* {
                     position: absolute;
                 }
             }
@@ -185,14 +185,14 @@ body.welcome-page {
 
 .footerRow {
     display: flex;
-
+    flex-direction: column;
     margin-bottom: $welcomePageHeaderTextMarginBottom;
     width: 100%;
     z-index: 1;
 }
 
 .footerCol {
-    width: 50%;
+    width: 100%;
     text-align: center;
     justify-content: center;
     font-size: 14px;
@@ -203,8 +203,11 @@ body.welcome-page {
 }
 
 .shareBlock .footerCol {
-    background-color: rgba(9, 30, 66, 0.2);
     padding: 50px;
+}
+
+.shareBlock .footerCol:first-child {
+    background-color: rgba(9, 30, 66, 0.2);
 }
 
 .shareBlock .footerCol .title {
